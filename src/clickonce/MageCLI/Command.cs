@@ -1433,7 +1433,9 @@ namespace Microsoft.Deployment.MageCLI
                 }
                 Debug.Assert(storedCert != null);
 
+#pragma warning disable CA1416 // Validate platform compatibility
                 SecurityUtilities.SignFile(storedCert, stamp, outputPath);
+#pragma warning restore CA1416 // Validate platform compatibility
             }
 
             Validate(manifest);
